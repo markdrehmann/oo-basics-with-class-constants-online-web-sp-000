@@ -6,7 +6,10 @@ class Shoe
 
   def initialize(brand)
     @brand = brand
-    BRANDS << brand
+    BRANDS.detect do |br|
+      br != brand
+      BRANDS << brand
+    end
   end
 
 
